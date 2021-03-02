@@ -1,0 +1,40 @@
+# ::Begin sample YAML::
+#
+# - Name: Sample Test Name
+  # Description: >
+  #  Stress Test Description...what it tests or what a client does and expects.
+  #  The description text can accept template data {{.NumberOfRequests}}
+  #  and renders as **Markdown**.            
+  # NumberOfConnections: 125
+  #
+  # NumberOfRequests: 100000
+  # or
+  # Duration: 5s
+  #
+  # Timeout: 2s
+  # Method: POST
+  # BodyFile: ./request_payload.json
+  # Headers:
+  #  Key: Value
+  # URL: http://localhost:5000
+  # Envs:
+  #  - Repo: username/repo
+  #    Name: projectName
+  #    Language: Go
+  #    Dir: ./_code/sample/framework_name
+  #    Link: ./code_sample/framework_name # overrides the Repo if not empty (or Dir if Repo was empty).
+  #    Exec: >-
+  #      command 1
+  #      command 2
+  #      go run main.go
+  #    or
+  #    NotSupported: true
+#
+# ::End sample YAML::
+- Name: Static
+  Description: Fires {{.NumberOfRequests}} requests, receives a static message as response.
+  NumberOfRequests: 1000000
+  Method: GET
+  URL: http://localhost:5000
+  Envs:
+    - Repo: kataras/iris

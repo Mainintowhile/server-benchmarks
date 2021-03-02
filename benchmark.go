@@ -284,6 +284,7 @@ func runBenchmark(t *Test, env *TestEnv) (err error) {
 
 	commandsToRun := strings.Split(env.Exec, "\n")
 	for i, commandToRun := range commandsToRun {
+		continue
 		if commandToRun == "" {
 			continue
 		}
